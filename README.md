@@ -112,11 +112,14 @@ The pipeline is located in `src/anomalous_ethereum_transactions/pipelines/data_s
 The nodes are located in `src/anomalous_ethereum_transactions/pipelines/data_science/nodes.py`
 
 This pipeline is splitted into two sub-pipelines :
+
 #### `Train pipeline`
 It trains an anomalous transaction detection model.
+
 **Inputs** : 
 `tx_df`: the dataframe with all the transactions used for training the model.
 `features_anomalous_detection_model`: List of the features used to train the model. You can modify it inside `conf/base/parameters_data_science.yml`
+
 **Output** : 
 `anomalous_detection_model`: The trained model (Isolation Forest). The model is saved with pickle at `data/06_models/anomalous_detection_model.pkl `
 

@@ -1,0 +1,16 @@
+# This is a boilerplate parameters config generated for pipeline 'data_processing'
+# using Kedro 0.18.13.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://docs.kedro.org/en/0.18.13/configuration/parameters.html
+
+
+block_number_start: 18183000
+block_number_end: 18183050
+
+# ###################################
+# For the infura_API_key parameters, 
+# create a file called "parameters_data_processing.yml" inside the folder conf/local, 
+# and put this line with your API_key:
+# ###################################
+#infura_API_key: ""

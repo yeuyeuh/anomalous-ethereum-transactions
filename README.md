@@ -32,13 +32,34 @@ The structure of this project is as follows:
     └── src             # Project source code (with pipelines and nodes)
     
 
+## Docker
 
-## Create and setup environment
+**Build the Docker Image:**
+
+Open a terminal, navigate to the directory containing your Dockerfile, and run the following command to build the Docker image:
+
+```
+docker build -t kedro-anomalous-image .
+```
+
+**Run a Docker Container:**
+
+After the image is built successfully, you can run a Docker container from the image using the following command:
+
+```
+docker run -it --rm -v /absolute_path/on/host/anomalous-ethereum-transactions:/anomalous-ethereum-transactions kedro-anomalous-image /bin/bash
+```
+
+Then, you can run every kedro command (like `kedro run`) inside the docker.
+To exit the container, just type `exit`.
+
+
+## Create and setup environment if you are not using Docker
 
 First create and activate your conda env.
 ```
-conda env create -f requirements/anomalous-transactions-env.yml python=3.7
-conda activate anomalous-transactions-env
+conda env create -f requirements/anomalous-transactions-env-freeze.yml python=3.7
+conda activate anomalous-transactions-env-freeze
 ```
 
 ## How to run Kedro pipelines

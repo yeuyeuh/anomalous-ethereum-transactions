@@ -62,7 +62,7 @@ kedro viz
 
 There are two main pipelines :
 
-###Data Processing Pipeline
+### Data Processing Pipeline
 Retreive transactions data for a list of blocks using Infura.
 The pipeline is located in `src/anomalous_ethereum_transactions/pipelines/data_processing/pipeline.py`.
 The nodes are located in `src/anomalous_ethereum_transactions/pipelines/data_processing/nodes.py`
@@ -85,13 +85,13 @@ If you want to change the input parameters, you can modify `conf/base/parameters
 kedro run --pipeline data_recovery --params "block_number_start=18183000,block_number_end=18183001"
 ```
 
-###Data Science Pipeline
+### Data Science Pipeline
 
 The pipeline is located in `src/anomalous_ethereum_transactions/pipelines/data_science/pipeline.py`.
 The nodes are located in `src/anomalous_ethereum_transactions/pipelines/data_science/nodes.py`
 
 This pipeline is splitted into two sub-pipelines :
-####`Train pipeline`
+#### `Train pipeline`
 It trains an anomalous transaction detection model.
 **Inputs** : 
 `tx_df`: the dataframe with all the transactions used for training the model.
@@ -100,7 +100,7 @@ It trains an anomalous transaction detection model.
 `anomalous_detection_model`: The trained model (Isolation Forest). The model is saved with pickle at `data/06_models/anomalous_detection_model.pkl `
 
 
-####`Predict pipeline`
+#### `Predict pipeline`
 It predicts anomalous transactions based on the trained model.
 
 **Inputs** : 

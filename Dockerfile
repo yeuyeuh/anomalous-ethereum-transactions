@@ -9,9 +9,10 @@ COPY . /anomalous-ethereum-transactions
 
 # Create and activate the Conda environment
 RUN conda env create -f requirements/anomalous-transactions-env-freeze.yml
-#SHELL ["conda", "activate", "anomalous-transactions-env-freeze"]
+
+RUN echo "conda activate anomalous-transactions-env-freeze" >> ~/.bashrc
+
 SHELL ["/bin/bash", "-c"]
-RUN source activate anomalous-transactions-env-freeze
 
 # Expose any necessary ports
 EXPOSE 8080

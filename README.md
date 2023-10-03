@@ -167,7 +167,7 @@ Please take a look at `src/anomalous-ethereum-transactions/pipeline_registry.py`
 
 ## Discussion on the model
 
-**Isolation Forest** is an ensemble-based anomaly detection algorithm that isolates anomalies by building a forest of random decision trees. This model is efficient and can handle large datasets with high-dimensional features. Also it doesn't require a lot of parameter tuning.
+Isolation Forest is an ensemble-based anomaly detection algorithm that isolates anomalies by building a forest of random decision trees. This model is efficient and can handle large datasets with high-dimensional features. Also it doesn't require a lot of parameter tuning.
 
 The features used are gasPrice,transactionPrice, transactionRank, and value. The transactionRank is equal to transactionIndex / total number of transactions in the block. 
 Also I decided to recover the "gas used" because it provides good information on the rewards available to miners.
@@ -177,7 +177,7 @@ Here is an example of the abnormal predictions we obtain for transactions in the
 
 We can say that there are several types of transaction, and that there are several sub-groups of abnormal transactions. In order to better identify them, we can try to define what characterises each sub-group of abnormal transactions.
 
-##Next steps
+## Next steps
 
 * Package the project. ([Further information about packaging a kedro project](https://kedro.readthedocs.io/en/stable/tutorial/package_a_project.html))
 * Integrate MLflow

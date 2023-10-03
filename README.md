@@ -85,16 +85,22 @@ There are two main pipelines :
 
 ### Data Processing Pipeline
 Retreive transactions data for a list of blocks using Infura.
+
 The pipeline is located in `src/anomalous_ethereum_transactions/pipelines/data_processing/pipeline.py`.
+
 The nodes are located in `src/anomalous_ethereum_transactions/pipelines/data_processing/nodes.py`
 
 
 **Inputs** : 
-**`block_number_start`**: number of the starting block. You can modify it inside `conf/base/parameters_data_processing.yml`
-**`block_number_end`**: number of the ending block. You can modify it inside `conf/base/parameters_data_processing.yml`
-**`infura_API_key`** : Infura API key. You can store your API key inside the local conf `conf/local/parameters_data_processing.yml`
+
+**`block_number_start`**: number of the starting block. You can modify it inside `conf/base/parameters_data_processing.yml`.
+
+**`block_number_end`**: number of the ending block. You can modify it inside `conf/base/parameters_data_processing.yml`.
+
+**`infura_API_key`** : Infura API key. You can store your API key inside the local conf `conf/local/parameters_data_processing.yml`.
 
 **Output** : 
+
 **`tx_df`**: Dataframe of all the transactions inside these blocks. Only these features are kept :  hash, blockNumber, gas, gasUsed, gasPrice, maxFeePerGas, maxPriorityFeePerGas, nonce, transactionIndex, type, value, transactionRank, and transactionPrice. A csv file is saved inside `data/02_intermediate/tx_df.csv`.
     
 If you want to run only the data_processing pipeline, you can run :
@@ -109,6 +115,7 @@ kedro run --pipeline data_recovery --params "block_number_start=18183000,block_n
 ### Data Science Pipeline
 
 The pipeline is located in `src/anomalous_ethereum_transactions/pipelines/data_science/pipeline.py`.
+
 The nodes are located in `src/anomalous_ethereum_transactions/pipelines/data_science/nodes.py`
 
 This pipeline is splitted into two sub-pipelines :
@@ -117,10 +124,13 @@ This pipeline is splitted into two sub-pipelines :
 It trains an anomalous transaction detection model.
 
 **Inputs** : 
+
 `tx_df`: the dataframe with all the transactions used for training the model.
+
 `features_anomalous_detection_model`: List of the features used to train the model. You can modify it inside `conf/base/parameters_data_science.yml`
 
 **Output** : 
+
 `anomalous_detection_model`: The trained model (Isolation Forest). The model is saved with pickle at `data/06_models/anomalous_detection_model.pkl `
 
 
@@ -137,10 +147,8 @@ It predicts anomalous transactions based on the trained model.
 
 **Outputs** : 
 
-<br/>
 
 `tx_wPredictions_df`: the dataframe of the transactions with all the predictions. It is saved in `data/07_model_output/tx_wPredictions_df.csv`.
-<br/>
 
 `t-SNE plot`: A t-SNE plot colored by the anomalous prediction. It is saved in `data/08_reporting/tSNE_on_predicted_data.html`
 

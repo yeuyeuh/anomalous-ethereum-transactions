@@ -123,7 +123,7 @@ It's the same as
 kedro run
 ```
 <br/>
-If you have already recover the data and train a model, you can simply run :
+If you have already recovered the data and train a model, you can simply run :
 
 ```
 kedro run --pipeline only_predict

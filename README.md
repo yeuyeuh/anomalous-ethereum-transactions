@@ -128,12 +128,20 @@ It trains an anomalous transaction detection model.
 It predicts anomalous transactions based on the trained model.
 
 **Inputs** : 
+
 `tx_df`: the dataframe with all the transactions we want to predict.
+
 `features_anomalous_detection_model`: List of the features used to train the model.
+
 `anomalous_detection_model`: The trained model (Isolation Forest).
 
 **Outputs** : 
+
+<br/>
+
 `tx_wPredictions_df`: the dataframe of the transactions with all the predictions. It is saved in `data/07_model_output/tx_wPredictions_df.csv`.
+<br/>
+
 `t-SNE plot`: A t-SNE plot colored by the anomalous prediction. It is saved in `data/08_reporting/tSNE_on_predicted_data.html`
 
 ### How to run the different pipelines ?

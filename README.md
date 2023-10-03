@@ -4,9 +4,9 @@ Developement of a system that detects anomalous Ethereum transactions.
 
 ## Overview
 
-This is your new Kedro project, which was generated using `Kedro 0.18.13`.
+This project was generated using `Kedro 0.18.13`.
 
-Take a look at the [Kedro documentation](https://kedro.readthedocs.io) to get started. But in summary :
+If you are new to Kedro, take a look at the [Kedro documentation](https://kedro.readthedocs.io) to get started. But in summary :
 
 * Kedro nodes are the building blocks of pipelines. A node is a wrapper for a Python function that names the inputs and outputs of that function.
 

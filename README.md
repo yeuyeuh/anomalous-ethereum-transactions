@@ -179,6 +179,7 @@ We can say that there are several types of transaction, and that there are sever
 
 ## Next steps
 
+* Unit testing and CI/CD
 * Package the project. ([Further information about packaging a kedro project](https://kedro.readthedocs.io/en/stable/tutorial/package_a_project.html))
 * Integrate MLflow
 * Find the right metrics to evaluate the model

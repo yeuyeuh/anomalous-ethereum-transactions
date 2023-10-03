@@ -1,0 +1,29 @@
+name: anomalous-transactions-env
+channels:
+- soumith
+- conda-forge
+- defaults
+dependencies:
+- pytest
+- pylint
+- pycodestyle
+- scipy
+- numpy
+- matplotlib
+- seaborn
+- tqdm
+- pandas
+- scikit-learn
+- pip
+- jupyter
+- plotly
+- plotly-orca
+- python-kaleido
+- kedro
+- xgboost
+- kedro-viz
+- pip:
+  - jupyterlab
+  - Pillow
+  - loguru
+  - web3
